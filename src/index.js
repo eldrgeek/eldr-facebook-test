@@ -3,14 +3,16 @@ import ReactDOM from "react-dom";
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import "./styles.css";
-import "./styles.css";
 import VideoPlayer from "./VideoPlayer";
-import fb from "./firebaseAuth";
+import "./firebaseAuth";
 import { firestore } from "firebase";
 
 const db = firestore();
 let count = 1;
 const useStyles = makeStyles(theme => ({
+  player: {
+    maxWidth: "200px"
+  },
   button: {
     margin: theme.spacing(1)
   },
@@ -36,14 +38,13 @@ function App() {
       });
 
     // db.ref("visits/" + count++).create({
-    //   date: Date()
+    //   date: Date()s
     // });
     console.log("clicked");
   };
   return (
     <div className="App">
-      <h1>Facebook Test</h1>
-      <h2>This facebook page registers a hit</h2>
+      <VideoPlayer className={classes.player} />
       <Button
         onClick={clickEvent}
         variant="contained"
@@ -52,7 +53,6 @@ function App() {
       >
         Click to get the report
       </Button>{" "}
-      <VideoPlayer />
     </div>
   );
 }
