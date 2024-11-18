@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "4.3.3",
-    "firebase": "6.4.2",
+    "firebase": "10.9.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-player": "1.12.0",
